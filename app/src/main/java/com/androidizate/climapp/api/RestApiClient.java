@@ -15,11 +15,11 @@ import retrofit2.http.QueryMap;
  */
 
 public class RestApiClient implements RestApi {
-    private static final String BASE_URL = "http://api.openweathermap.org/data/2.5/forecast";
+    private static final String BASE_URL = "http://api.openweathermap.org/";
     private static final String APPID = "c6fa2147d92527dd670150c95ae74ed4";
 
     @Override
-    public Call<List<WeatherInfo>> getWeatherInfo(@QueryMap Map<String, String> options) {
+    public Call<WeatherInfo> getWeatherInfo(@QueryMap Map<String, String> options) {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())

@@ -9,7 +9,7 @@ public class Main {
     private Float temp;
     private Float tempMin;
     private Float tempMax;
-    private Integer pressure;
+    private double pressure;
     private Float seaLevel;
     private Integer grndLevel;
     private Integer humidity;
@@ -39,7 +39,7 @@ public class Main {
         this.tempMax = tempMax;
     }
 
-    public Integer getPressure() {
+    public double getPressure() {
         return pressure;
     }
 

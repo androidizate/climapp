@@ -23,7 +23,7 @@ import retrofit2.Response;
 /**
  * @author Andres Oller.
  **/
-public class MainActivity extends AppCompatActivity implements Callback<List<WeatherInfo>> {
+public class MainActivity extends AppCompatActivity implements Callback<WeatherInfo> {
 
     private TextView mTextMessage;
 
@@ -66,12 +66,12 @@ public class MainActivity extends AppCompatActivity implements Callback<List<Wea
     }
 
     @Override
-    public void onResponse(Call<List<WeatherInfo>> call, Response<List<WeatherInfo>> response) {
+    public void onResponse(Call<WeatherInfo> call, Response<WeatherInfo> response) {
         Toast.makeText(this, response.toString(), Toast.LENGTH_LONG).show();
     }
 
     @Override
-    public void onFailure(Call<List<WeatherInfo>> call, Throwable t) {
+    public void onFailure(Call<WeatherInfo> call, Throwable t) {
         Toast.makeText(this, "Error de conexion", Toast.LENGTH_LONG).show();
     }
 }
