@@ -7,11 +7,25 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.androidizate.climapp.api.RestApiClient;
+import com.androidizate.climapp.dao.WeatherInfo;
+
+import java.util.HashMap;
+import java.util.Locale;
+import java.util.Map;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
- *  @author Andres Oller.
+ * @author Andres Oller.
  **/
-public class MainActivity extends AppCompatActivity {
+
+// FIXME sacar la implementación del callback e implementar MVP
+public class MainActivity extends AppCompatActivity implements Callback<WeatherInfo> {
 
     private TextView mTextMessage;
 
@@ -44,6 +58,24 @@ public class MainActivity extends AppCompatActivity {
         mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+        RestApiClient restApiClient = new RestApiClient();
+        Map<String, String> parameters = new HashMap<>();
+        parameters.put("lat", "-31.4200830");
+        parameters.put("lon", "-64.1887760");
+        parameters.put("units", getString(R.string.metric_system));
+        parameters.put("appid", getString(R.string.weather_api_id));
+        parameters.put("lang", Locale.getDefault().getLanguage());
+        restApiClient.getWeatherInfo(parameters).enqueue(this);
     }
 
+    @Override
+    public void onResponse(Call<WeatherInfo> call, Response<WeatherInfo> response) {
+        Toast.makeText(this, response.toString(), Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void onFailure(Call<WeatherInfo> call, Throwable t) {
+        Toast.makeText(this, "Error de conexion", Toast.LENGTH_LONG).show();
+    }
 }
