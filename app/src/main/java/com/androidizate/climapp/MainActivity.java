@@ -13,9 +13,10 @@ import com.androidizate.climapp.api.RestApiClient;
 import com.androidizate.climapp.dao.WeatherInfo;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -25,7 +26,7 @@ import retrofit2.Response;
  **/
 public class MainActivity extends AppCompatActivity implements Callback<WeatherInfo> {
 
-    private TextView mTextMessage;
+
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -48,13 +49,13 @@ public class MainActivity extends AppCompatActivity implements Callback<WeatherI
 
     };
 
+    @BindView(R.id.message) TextView mTextMessage; //Butterknife
+    @BindView(R.id.navigation) BottomNavigationView navigation;//Butterknife
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        mTextMessage = (TextView) findViewById(R.id.message);
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        ButterKnife.bind(this);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         RestApiClient restApiClient = new RestApiClient();
