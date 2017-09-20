@@ -3,4 +3,7 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="weather_api_id">c6fa2147d92527dd670150c95ae74ed4</string>
+    <string name="metric_system">metric</string>
+    <string name="imperial_system">imperial</string>
 </resources>
