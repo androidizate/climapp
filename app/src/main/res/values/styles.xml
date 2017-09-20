@@ -2,10 +2,51 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="windowActionBarOverlay">true</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="actionBarStyle">@style/MyActionBar</item>
+        <item name="preferenceTheme">@style/MyPreferenceTheme</item>
     </style>
 
+    <style name="MyActionBar" parent="@style/Widget.AppCompat.Light.ActionBar">
+        <item name="android:background">@color/transparent</item>
+        <item name="background">@color/transparent</item>
+    </style>
+
+    <style name="LocationTitle">
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">@dimen/location_title_text_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TemperatureDisplay">
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">@dimen/material_text_headline</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="InformationDisplay">
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">@dimen/material_text_body1</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="LeftInformationDisplay" parent="InformationDisplay">
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:layout_marginStart">12dp</item>
+    </style>
+
+    <style name="RightInformationDisplay" parent="InformationDisplay">
+        <item name="android:textAlignment">textEnd</item>
+        <item name="android:layout_marginEnd">12dp</item>
+    </style>
+
+    <style name="MyPreferenceTheme" parent="PreferenceThemeOverlay">
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:textColorSecondary">@color/white</item>
+    </style>
 </resources>

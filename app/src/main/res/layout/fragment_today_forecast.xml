@@ -1,0 +1,121 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_location"
+            style="@style/LocationTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cordoba, AR" />
+
+        <com.androidizate.climapp.ui.custom_views.ForecastImageView
+            android:id="@+id/iv_forecast_icon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:scaleType="fitCenter"
+            android:src="@drawable/_50n" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_temperature"
+                style="@style/TemperatureDisplay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="17°C" />
+
+            <TextView
+                android:id="@+id/tv_forecast"
+                style="@style/InformationDisplay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Despejado" />
+
+            <TextView
+                android:id="@+id/tv_max_min_forecast"
+                style="@style/InformationDisplay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Min: 10°C / Max: 25°C" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="8dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_humidity"
+                style="@style/LeftInformationDisplay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/humidity"
+                android:text="89%" />
+
+            <TextView
+                android:id="@+id/tv_wind"
+                style="@style/LeftInformationDisplay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/wind"
+                android:text="NE 7 m/s" />
+
+            <TextView
+                android:id="@+id/tv_pressure"
+                style="@style/LeftInformationDisplay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/pressure"
+                android:text="1022 hPa" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_sunrise"
+                style="@style/RightInformationDisplay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/sunrise"
+                android:text="07:01 AM" />
+
+            <TextView
+                android:id="@+id/tv_sunset"
+                style="@style/RightInformationDisplay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/sunset"
+                android:text="18:14 PM" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</FrameLayout>

@@ -1,9 +1,8 @@
 package com.androidizate.climapp.dao;
 
 /**
- * Created by Marcos on 18/9/2017.
+ * @author Marcos Toranzo.
  */
-
 public class Weather {
 
     private long id;
