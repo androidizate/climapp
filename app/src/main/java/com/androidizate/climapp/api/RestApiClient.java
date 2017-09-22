@@ -10,9 +10,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.QueryMap;
 
 /**
- * Created by Marcos on 18/9/2017.
+ * @author Marcos Toranzo.
  */
-
 public class RestApiClient implements RestApi {
     private static final String BASE_URL = "http://api.openweathermap.org/";
 

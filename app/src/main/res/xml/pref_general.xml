@@ -1,0 +1,19 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ListPreference
+        android:entries="@array/pref_sync_frequency_titles"
+        android:entryValues="@array/pref_sync_frequency_values"
+        android:key="@string/key_update_frequency"
+        android:negativeButtonText="@string/cancel"
+        android:positiveButtonText="@string/ok"
+        android:title="@string/pref_title_update_frequency" />
+
+    <ListPreference
+        android:entries="@array/pref_measurement_system_titles"
+        android:entryValues="@array/pref_measurement_system_values"
+        android:key="@string/key_measurement_system"
+        android:negativeButtonText="@string/cancel"
+        android:positiveButtonText="@string/ok"
+        android:title="@string/pref_title_measurement_system" />
+
+</PreferenceScreen>

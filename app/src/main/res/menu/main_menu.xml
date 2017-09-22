@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/layers"
+        android:icon="@drawable/ic_layers"
+        android:title="@string/layer"
+        android:visible="false"
+        app:showAsAction="always">
+
+        <menu>
+            <item
+                android:id="@+id/clouds"
+                android:title="@string/clouds" />
+
+            <item
+                android:id="@+id/precipitation"
+                android:title="@string/precipitation" />
+
+            <item
+                android:id="@+id/snow"
+                android:title="@string/snow" />
+
+            <item
+                android:id="@+id/rain"
+                android:title="@string/rain" />
+
+            <item
+                android:id="@+id/pressure"
+                android:title="@string/pressure" />
+
+            <item
+                android:id="@+id/temperature"
+                android:title="@string/temperature" />
+
+            <item
+                android:id="@+id/wind"
+                android:title="@string/wind" />
+        </menu>
+
+    </item>
+
+    <item
+        android:id="@+id/refresh"
+        android:icon="@drawable/ic_sync_black_24dp"
+        android:title="@string/refresh"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/settings"
+        android:icon="@drawable/ic_settings"
+        android:title="@string/refresh"
+        app:showAsAction="always" />
+
+</menu>
