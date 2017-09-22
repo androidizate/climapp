@@ -35,10 +35,11 @@ public class TodayForecastFragment extends Fragment implements Callback<WeatherI
         super.onViewCreated(view, savedInstanceState);
         RestApiClient restApiClient = new RestApiClient();
         Map<String, String> parameters = new HashMap<>();
+        //TODO agregar la llamada por latitud y longitud cuando este la geolocalización incluida.
         parameters.put("q", "Cordoba,ar");
         parameters.put("appid", getString(R.string.weather_api_id));
         parameters.put("lang", Locale.getDefault().getLanguage());
-        restApiClient.getForecast(parameters).enqueue(this);
+        restApiClient.getWeatherInfo(parameters).enqueue(this);
     }
 
     @Override

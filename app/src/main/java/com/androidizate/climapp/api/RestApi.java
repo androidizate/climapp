@@ -11,7 +11,7 @@ import retrofit2.http.QueryMap;
 /**
  * @author Marcos Toranzo.
  */
-interface RestApi {
+public interface RestApi {
 
     @GET("data/2.5/forecast")
     Call<WeatherInfo> getForecast(@QueryMap(encoded = true) Map<String, String> options);
