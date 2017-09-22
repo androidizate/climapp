@@ -16,11 +16,20 @@ public class RestApiClient implements RestApi {
     private static final String BASE_URL = "http://api.openweathermap.org/";
 
     @Override
-    public Call<WeatherInfo> getWeatherInfo(@QueryMap Map<String, String> options) {
+    public Call<WeatherInfo> getForecast(@QueryMap Map<String, String> options) {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
-        return retrofit.create(RestApi.class).getWeatherInfo(options);
+        return retrofit.create(RestApi.class).getForecast(options);
+    }
+
+    @Override
+    public Call<WeatherInfo> getWeather(@QueryMap(encoded = true) Map<String, String> options) {
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        return retrofit.create(RestApi.class).getWeather(options);
     }
 }

@@ -7,7 +7,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.androidizate.climapp.R;
 import com.androidizate.climapp.api.RestApiClient;
@@ -39,7 +38,7 @@ public class TodayForecastFragment extends Fragment implements Callback<WeatherI
         parameters.put("q", "Cordoba,ar");
         parameters.put("appid", getString(R.string.weather_api_id));
         parameters.put("lang", Locale.getDefault().getLanguage());
-        restApiClient.getWeatherInfo(parameters).enqueue(this);
+        restApiClient.getForecast(parameters).enqueue(this);
     }
 
     @Override
