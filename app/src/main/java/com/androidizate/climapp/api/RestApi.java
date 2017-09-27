@@ -14,8 +14,8 @@ import retrofit2.http.QueryMap;
 public interface RestApi {
 
     @GET("data/2.5/forecast")
-    Call<WeatherInfo> getForecast(@QueryMap(encoded = true) Map<String, String> options);
+    Call<WeatherInfo> getWeeklyForecast(@QueryMap(encoded = true) Map<String, String> options);
 
     @GET("data/2.5/weather")
-    Call<WeatherInfo> getWeather(@QueryMap(encoded = true) Map<String, String> options);
+    Call<WeatherInfo> getActualWeather(@QueryMap(encoded = true) Map<String, String> options);
 }
