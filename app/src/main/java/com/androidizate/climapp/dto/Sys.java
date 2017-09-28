@@ -1,4 +1,4 @@
-package com.androidizate.climapp.dao;
+package com.androidizate.climapp.dto;
 
 /**
  * @author Marcos Toranzo.
@@ -6,12 +6,12 @@ package com.androidizate.climapp.dao;
 public class Sys {
 
     private String pod;
-    private Long type;
-    private Long id;
+    private long type;
+    private long id;
     private Double message;
     private String country;
-    private Long sunrise;
-    private Long sunset;
+    private long sunrise;
+    private long sunset;
 
     public String getPod() {
         return pod;
@@ -21,19 +21,19 @@ public class Sys {
         this.pod = pod;
     }
 
-    public Long getType() {
+    public long getType() {
         return type;
     }
 
-    public void setType(Long type) {
+    public void setType(long type) {
         this.type = type;
     }
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -53,19 +53,19 @@ public class Sys {
         this.country = country;
     }
 
-    public Long getSunrise() {
+    public long getSunrise() {
         return sunrise;
     }
 
-    public void setSunrise(Long sunrise) {
+    public void setSunrise(long sunrise) {
         this.sunrise = sunrise;
     }
 
-    public Long getSunset() {
+    public long getSunset() {
         return sunset;
     }
 
-    public void setSunset(Long sunset) {
+    public void setSunset(long sunset) {
         this.sunset = sunset;
     }
 }

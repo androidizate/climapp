@@ -2,15 +2,12 @@ package com.androidizate.climapp.ui.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.annotation.StringDef;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.RecyclerView.ViewHolder;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.androidizate.climapp.R;
 
@@ -26,7 +23,7 @@ public class WeeklyForecastFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState) {
+                             Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_weekly_forecast, container, false);
     }
 
@@ -51,27 +48,6 @@ public class WeeklyForecastFragment extends Fragment {
     public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         private List<String> mDataset;
 
-        public class ViewHolder extends RecyclerView.ViewHolder {
-
-            public ViewHolder(View itemView) {
-                super(itemView);
-
-                List<String> data2 = new ArrayList<>();
-                data2.add("");
-                data2.add("");
-                data2.add("");
-                data2.add("");
-                data2.add("");
-                data2.add("");
-                RecyclerView recyclerView2 = itemView.findViewById(R.id.hourly_forecast_recycler_view);
-                recyclerView2.setHasFixedSize(true);
-                LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
-                linearLayoutManager.setOrientation(HORIZONTAL);
-                recyclerView2.setLayoutManager(linearLayoutManager);
-                recyclerView2.setAdapter(new MySecondAdapter(data2));
-            }
-        }
-
         public MyAdapter(List<String> myDataset) {
             mDataset = myDataset;
         }
@@ -92,17 +68,31 @@ public class WeeklyForecastFragment extends Fragment {
         public int getItemCount() {
             return mDataset.size();
         }
-    }
-
-    public class MySecondAdapter extends RecyclerView.Adapter<MySecondAdapter.ViewHolder> {
-        private List<String> mDataset;
 
         public class ViewHolder extends RecyclerView.ViewHolder {
 
             public ViewHolder(View itemView) {
                 super(itemView);
+
+                List<String> data2 = new ArrayList<>();
+                data2.add("");
+                data2.add("");
+                data2.add("");
+                data2.add("");
+                data2.add("");
+                data2.add("");
+                RecyclerView recyclerView2 = itemView.findViewById(R.id.hourly_forecast_recycler_view);
+                recyclerView2.setHasFixedSize(true);
+                LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+                linearLayoutManager.setOrientation(HORIZONTAL);
+                recyclerView2.setLayoutManager(linearLayoutManager);
+                recyclerView2.setAdapter(new MySecondAdapter(data2));
             }
         }
+    }
+
+    public class MySecondAdapter extends RecyclerView.Adapter<MySecondAdapter.ViewHolder> {
+        private List<String> mDataset;
 
         public MySecondAdapter(List<String> myDataset) {
             mDataset = myDataset;
@@ -123,6 +113,13 @@ public class WeeklyForecastFragment extends Fragment {
         @Override
         public int getItemCount() {
             return mDataset.size();
+        }
+
+        public class ViewHolder extends RecyclerView.ViewHolder {
+
+            public ViewHolder(View itemView) {
+                super(itemView);
+            }
         }
     }
 }

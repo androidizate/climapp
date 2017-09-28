@@ -40,7 +40,7 @@ public class ForecastImageView extends android.support.v7.widget.AppCompatImageV
     private void setDrawableSize() {
         if (width <= 320) {
             calculatedWidth = (int) (width * 0.3);
-        } else if (width <= 480){
+        } else if (width <= 480) {
             calculatedWidth = (int) (width * 0.35);
         } else if (width <= 800) {
             calculatedWidth = (int) (width * 0.4);

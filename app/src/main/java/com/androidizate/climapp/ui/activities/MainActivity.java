@@ -4,7 +4,6 @@ package com.androidizate.climapp.ui.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.annotation.StringDef;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -18,7 +17,13 @@ import com.androidizate.climapp.ui.fragments.ForecastMapFragment;
 import com.androidizate.climapp.ui.fragments.TodayForecastFragment;
 import com.androidizate.climapp.ui.fragments.WeeklyForecastFragment;
 
-import static com.androidizate.climapp.constants.MapLayersConstants.*;
+import static com.androidizate.climapp.constants.MapLayersConstants.LAYER_CLOUDS;
+import static com.androidizate.climapp.constants.MapLayersConstants.LAYER_PRECIPITATION;
+import static com.androidizate.climapp.constants.MapLayersConstants.LAYER_PRESSURE;
+import static com.androidizate.climapp.constants.MapLayersConstants.LAYER_RAIN;
+import static com.androidizate.climapp.constants.MapLayersConstants.LAYER_SNOW;
+import static com.androidizate.climapp.constants.MapLayersConstants.LAYER_TEMPERATURE;
+import static com.androidizate.climapp.constants.MapLayersConstants.LAYER_WIND;
 
 /**
  * @author Andres Oller.

@@ -1,4 +1,4 @@
-package com.androidizate.climapp.dao;
+package com.androidizate.climapp.dto;
 
 import com.google.gson.annotations.SerializedName;
 
