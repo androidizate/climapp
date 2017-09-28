@@ -4,7 +4,6 @@ package com.androidizate.climapp.ui.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.annotation.StringDef;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -18,7 +17,17 @@ import com.androidizate.climapp.ui.fragments.ForecastMapFragment;
 import com.androidizate.climapp.ui.fragments.TodayForecastFragment;
 import com.androidizate.climapp.ui.fragments.WeeklyForecastFragment;
 
-import static com.androidizate.climapp.constants.MapLayersConstants.*;
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
+import static com.androidizate.climapp.constants.MapLayersConstants.LAYER_CLOUDS;
+import static com.androidizate.climapp.constants.MapLayersConstants.LAYER_PRECIPITATION;
+import static com.androidizate.climapp.constants.MapLayersConstants.LAYER_PRESSURE;
+import static com.androidizate.climapp.constants.MapLayersConstants.LAYER_RAIN;
+import static com.androidizate.climapp.constants.MapLayersConstants.LAYER_SNOW;
+import static com.androidizate.climapp.constants.MapLayersConstants.LAYER_TEMPERATURE;
+import static com.androidizate.climapp.constants.MapLayersConstants.LAYER_WIND;
+import static com.androidizate.climapp.utils.PermissionUtils.REQUEST_MULTIPLE_PERMISSIONS;
 
 /**
  * @author Andres Oller.
@@ -28,12 +37,14 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     FragmentManager fragmentManager;
     MenuItem layersItem;
 
+    @BindView(R.id.navigation) BottomNavigationView navigation;//Butterknife
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         fragmentManager = getSupportFragmentManager();
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        ButterKnife.bind(this);
         navigation.setOnNavigationItemSelectedListener(this);
         navigation.setSelectedItemId(R.id.navigation_daily);
     }
@@ -122,5 +133,13 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
     private void updateMapLayer(@MapLayersConstants String layer) {
         ((ForecastMapFragment) fragmentManager.findFragmentByTag(ForecastMapFragment.class.getSimpleName())).reloadTileProvider(layer);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == REQUEST_MULTIPLE_PERMISSIONS) {
+            getSupportFragmentManager().findFragmentByTag(ForecastMapFragment.class.getSimpleName()).onRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
     }
 }

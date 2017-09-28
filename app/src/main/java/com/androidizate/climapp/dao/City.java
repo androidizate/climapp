@@ -5,12 +5,16 @@ import com.google.gson.annotations.SerializedName;
 /**
  * @author Marcos Toranzo.
  */
+
 public class City {
 
     private int id;
+
     private String name;
+
     @SerializedName("coord")
     private Coordinates coordinates;
+
     private String country;
 
     public int getId() {
