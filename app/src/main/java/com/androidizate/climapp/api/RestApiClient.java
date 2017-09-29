@@ -1,5 +1,6 @@
 package com.androidizate.climapp.api;
 
+import com.androidizate.climapp.dto.ActualWeatherInfo;
 import com.androidizate.climapp.dto.WeatherInfo;
 
 import java.util.Map;
