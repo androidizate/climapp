@@ -14,7 +14,7 @@
             android:layout_height="wrap_content"
             android:text="Cordoba, AR" />
 
-        <com.androidizate.climapp.ui.custom_views.ForecastImageView
+        <com.androidizate.climapp.presentation.ui.custom_views.ForecastImageView
             android:id="@+id/iv_forecast_icon"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

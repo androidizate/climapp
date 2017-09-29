@@ -28,4 +28,5 @@
     <string name="snow">Snow</string>
     <string name="rain">Rain</string>
     <string name="tile_url">http://tile.openweathermap.org/map/%1$s/%2$d/%3$d/%4$d.png?appid=%5$s</string>
+    <string name="hourly_min_max">%1$s / %2$s</string>
 </resources>

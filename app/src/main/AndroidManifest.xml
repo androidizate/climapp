@@ -7,7 +7,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
-        android:name=".ClimappApplication"
+        android:name=".presentation.ClimappApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -24,7 +24,7 @@
             android:value="@integer/google_play_services_version" />
 
         <activity
-            android:name=".ui.activities.MainActivity"
+            android:name=".presentation.ui.activities.MainActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,12 +33,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.activities.SettingsActivity"
+            android:name=".presentation.ui.activities.SettingsActivity"
             android:label="@string/title_activity_settings"
-            android:parentActivityName=".ui.activities.MainActivity">
+            android:parentActivityName=".presentation.ui.activities.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.androidizate.climapp.ui.activities.MainActivity" />
+                android:value=".presentation.ui.activities.MainActivity" />
         </activity>
     </application>
 

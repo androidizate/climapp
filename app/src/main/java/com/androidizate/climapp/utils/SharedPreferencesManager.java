@@ -4,6 +4,8 @@ import android.content.Context;
 
 import com.androidizate.climapp.R;
 
+import javax.inject.Inject;
+
 import static android.content.Context.MODE_PRIVATE;
 
 /**
@@ -13,6 +15,7 @@ public class SharedPreferencesManager {
 
     private Context context;
 
+    @Inject
     public SharedPreferencesManager(Context context) {
         this.context = context;
     }
@@ -42,9 +45,5 @@ public class SharedPreferencesManager {
     public String getUpdateFrequencyValue() {
         return context.getSharedPreferences(context.getString(R.string.user_preferences), MODE_PRIVATE)
                 .getString(context.getString(R.string.key_measurement_system), "");
-    }
-
-    public String getMeasurementSystemValue() {
-        return null;
     }
 }
