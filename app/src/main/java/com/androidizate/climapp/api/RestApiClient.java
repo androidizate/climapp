@@ -1,6 +1,6 @@
 package com.androidizate.climapp.api;
 
-import com.androidizate.climapp.dao.WeatherInfo;
+import com.androidizate.climapp.dto.WeatherInfo;
 
 import java.util.Map;
 
@@ -16,11 +16,20 @@ public class RestApiClient implements RestApi {
     private static final String BASE_URL = "http://api.openweathermap.org/";
 
     @Override
-    public Call<WeatherInfo> getWeatherInfo(@QueryMap Map<String, String> options) {
+    public Call<WeatherInfo> getWeeklyForecast(@QueryMap Map<String, String> options) {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
-        return retrofit.create(RestApi.class).getWeatherInfo(options);
+        return retrofit.create(RestApi.class).getWeeklyForecast(options);
+    }
+
+    @Override
+    public Call<WeatherInfo> getActualWeather(@QueryMap(encoded = true) Map<String, String> options) {
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        return retrofit.create(RestApi.class).getActualWeather(options);
     }
 }

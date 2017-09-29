@@ -1,6 +1,6 @@
 package com.androidizate.climapp.api;
 
-import com.androidizate.climapp.dao.WeatherInfo;
+import com.androidizate.climapp.dto.WeatherInfo;
 
 import java.util.Map;
 
@@ -14,5 +14,8 @@ import retrofit2.http.QueryMap;
 public interface RestApi {
 
     @GET("data/2.5/forecast")
-    Call<WeatherInfo> getWeatherInfo(@QueryMap(encoded = true) Map<String, String> options);
+    Call<WeatherInfo> getWeeklyForecast(@QueryMap(encoded = true) Map<String, String> options);
+
+    @GET("data/2.5/weather")
+    Call<WeatherInfo> getActualWeather(@QueryMap(encoded = true) Map<String, String> options);
 }

@@ -1,27 +1,23 @@
-package com.androidizate.climapp.dao;
+package com.androidizate.climapp.dto;
 
 import com.google.gson.annotations.SerializedName;
 
 /**
  * @author Marcos Toranzo.
  */
-
 public class City {
 
-    private int id;
-
+    private long id;
     private String name;
-
     @SerializedName("coord")
     private Coordinates coordinates;
-
     private String country;
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 

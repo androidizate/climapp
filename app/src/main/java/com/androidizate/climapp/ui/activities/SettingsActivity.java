@@ -7,7 +7,7 @@ import com.androidizate.climapp.R;
 import com.androidizate.climapp.ui.fragments.SettingsFragment;
 
 /**
- *  @author Andres Oller.
+ * @author Andres Oller.
  */
 public class SettingsActivity extends AppCompatActivity {
 
